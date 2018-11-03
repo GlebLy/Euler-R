@@ -15,3 +15,16 @@ for(i in 1:100){
   }
 }
 y
+
+#Fizz-Buzz, functionaly style
+
+x <- 1:100;
+z <- 1:100;
+
+x[z%%3==0] <- "Fizz";
+x[z%%5==0] <- "Buzz";
+x[z%%15==0] <- "Fizz-Buzz";
+
+x
+
+all(x,y);
