@@ -18,6 +18,16 @@ etoFactor <- function(x){
 deliteliFactora <- function(chislo){
   x <- 1:chislo;
   z <- 1:chislo;
-  factor <- etoFactor(z[which(13195 %% x == 0)]);
+	i <- 1;
+	deliteli <- z[which(chislo %% x == 0)];
+	
+	etoFactora <- 1:length(deliteli);
+	while( i <= length(deliteli)){
+  	etoFactora[i] <- etoFactor(deliteli[i]);
+		factor <- deliteli[which(etoFactora == 1)];
+		
+		i <- i + 1;
+		
+		}
   return(factor);
   }
