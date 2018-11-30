@@ -1,5 +1,14 @@
 isPalindrom <- function(x){
-
+  #as.character() или toString()
+  c <- toString(x);
+  i <- 1;
+  while(i<=nchar(c)/2){
+    if(substr(c, i, i) != substr(c, nchar(c) - i + 1,  nchar(c) - i + 1)){
+      return(FALSE);
+    }
+    i <- i + 1;
+  }
+  return(TRUE);
 }
 bigPalindrom <- function(x){
   verxPredel <- 10^x - 1;
