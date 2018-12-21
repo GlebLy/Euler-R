@@ -15,17 +15,24 @@ etoFactor <- function(x){
    }
 }
 
-summaFactorov <- function(predel){
-  summa <- 0;
-  #j <- 0;
-  i <- 0;
-  while (i<predel){
-    if (etoFactor(i)){
-      #print(i);
-      #j <- j + 1;
-      summa <- summa + i;
-    }
-    i <- i + 1;
-   }
- return(summa);
+euclidovoSito <- function(predel){
+  if (predel<2){
+    return(NULL);
+  }else if (predel == 2) {
+    return(predel);
+   } else {
+    l <- 2:predel;
+    i <- 1;
+    while ( l[i] < sqrt(predel) ){
+
+        #print(i);
+        l <- c(l[i] , l[!l%%l[i]==0]);
+        #print(l);
+
+      i <- i + 1;
+     }
+ }
+ return(l);
 }
+
+sum(as.numeric(euclidovoSito(2e6)));

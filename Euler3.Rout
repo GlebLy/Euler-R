@@ -1,0 +1,57 @@
+
+R version 3.4.4 (2018-03-15) -- "Someone to Lean On"
+Copyright (C) 2018 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R -- это свободное ПО, и оно поставляется безо всяких гарантий.
+Вы вольны распространять его при соблюдении некоторых условий.
+Введите 'license()' для получения более подробной информации.
+
+R -- это проект, в котором сотрудничает множество разработчиков.
+Введите 'contributors()' для получения дополнительной информации и
+'citation()' для ознакомления с правилами упоминания R и его пакетов
+в публикациях.
+
+Введите 'demo()' для запуска демонстрационных программ, 'help()' -- для
+получения справки, 'help.start()' -- для доступа к справке через браузер.
+Введите 'q()', чтобы выйти из R.
+
+[Загружено ранее сохраненное рабочее пространство]
+
+> etoFactor <- function(x){
++   if(x<2){
++     return(FALSE);
++   }else{
++     flag <- 2;
++     while (flag<x){
++       
++       if(x%%flag==0){
++         return(FALSE);
++         }
++         
++       flag <- flag + 1;
++      }
++      return(TRUE);
++    }
++ }
+> 
+> deliteliFactora <- function(chislo){
++   x <- 1:chislo;
++   z <- 1:chislo;
++ 	i <- 1;
++ 	deliteli <- z[which(chislo %% x == 0)];
++ 	
++ 	etoFactora <- 1:length(deliteli);
++ 	while( i <= length(deliteli)){
++   	etoFactora[i] <- etoFactor(deliteli[i]);
++ 		factor <- deliteli[which(etoFactora == 1)];
++ 		
++ 		i <- i + 1;
++ 		
++ 		}
++   return(factor);
++   }
+> 
+> proc.time()
+пользователь      система       прошло 
+       0.409        0.049        0.439 

@@ -1,0 +1,55 @@
+
+R version 3.4.4 (2018-03-15) -- "Someone to Lean On"
+Copyright (C) 2018 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R -- это свободное ПО, и оно поставляется безо всяких гарантий.
+Вы вольны распространять его при соблюдении некоторых условий.
+Введите 'license()' для получения более подробной информации.
+
+R -- это проект, в котором сотрудничает множество разработчиков.
+Введите 'contributors()' для получения дополнительной информации и
+'citation()' для ознакомления с правилами упоминания R и его пакетов
+в публикациях.
+
+Введите 'demo()' для запуска демонстрационных программ, 'help()' -- для
+получения справки, 'help.start()' -- для доступа к справке через браузер.
+Введите 'q()', чтобы выйти из R.
+
+[Загружено ранее сохраненное рабочее пространство]
+
+> isPalindrom <- function(x){
++   #as.character() или toString()
++   c <- toString(x);
++   i <- 1;
++   while(i<=nchar(c)/2){
++     if(substr(c, i, i) != substr(c, nchar(c) - i + 1,  nchar(c) - i + 1)){
++       return(FALSE);
++     }
++     i <- i + 1;
++   }
++   return(TRUE);
++ }
+> bigPalindrom <- function(x){
++   verxPredel <- 10^x - 1;
++   nizhPredel <- 10^(x-1) - 1;
++   i <- verxPredel;
++   palin <- 0;
++   while(i>nizhPredel){
++     j <- verxPredel;
++     if(i%%11==0 | j%%11==0){
++       while(j>nizhPredel){
++         if(isPalindrom(i*j) & palin < i*j){
++           palin <- i*j;
++         }
++         j <- j - 1;
++       }
++     }
++     i <- i - 1;
++   }
++   return(palin);
++ }
+> 
+> proc.time()
+пользователь      система       прошло 
+       0.435        0.032        0.447 
