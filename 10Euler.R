@@ -1,3 +1,4 @@
+options(max.print = .Machine$integer.max)
 etoFactor <- function(x){
   if(x<2){
     return(FALSE);
@@ -34,5 +35,5 @@ euclidovoSito <- function(predel){
  }
  return(l);
 }
-
 sum(as.numeric(euclidovoSito(2e6)));
+euclidovoSito(2e6);
